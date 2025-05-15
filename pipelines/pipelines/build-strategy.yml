@@ -15,6 +15,7 @@ pr:
   branches:
     include:
     - current
+    - main
     exclude:
       - uat
 
