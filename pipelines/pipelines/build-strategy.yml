@@ -11,13 +11,13 @@ trigger:
     exclude:
       - v5.0
 
-pr:
-  branches:
-    include:
-    - current
-    - main
-    exclude:
-      - uat
+  pr:
+    branches:
+      include:
+      - current
+      - main
+      exclude:
+        - uat
 
 pool:
   vmImage: ubuntu-latest
