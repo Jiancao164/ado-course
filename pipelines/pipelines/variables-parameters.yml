@@ -30,7 +30,7 @@ stages:
     displayName: job1
     steps:
 
-      - script: echo ${{parameters.surname}}
+      - script: echo hello world
         displayName:  printing parameters input for surname
       
       - script: echo My name is $(Name) and my surname is ${{parameters.surname}}
