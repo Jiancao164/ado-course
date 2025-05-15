@@ -10,8 +10,6 @@ trigger:
       - docs
       - azure-pipelines.yml
       - projects
-    exclude:
-      - docs/README.md
   tags:
     include:
       - v2.*
