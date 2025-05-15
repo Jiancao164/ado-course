@@ -5,12 +5,6 @@ trigger:
       - releases/*
     exclude:
       - uat
-  paths:
-    include:
-      - docs
-      - azure-pipelines.yml
-      - projects
-      - README.md
   tags:
     include:
       - v2.*
