@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 stages:
 - stage: stage1
-  displayName: display name for your stage
+  displayName: display name for your stage1
   jobs:
   - job: job1
     displayName: display name for job1
@@ -17,3 +17,17 @@ stages:
     steps:
     - script: echo job2.task1
       displayName: running job2.task1
+
+- stage: stage2
+  displayName: display name for your stage2
+  jobs:
+  - job: job3
+    displayName: display name for job3
+    steps:
+    - script: echo job3.task3
+      displayName: running job3.task3
+  - job: job4
+    displayName: display name for job4
+    steps:
+    - script: echo job4.task4
+      displayName: running job4.task4
