@@ -8,6 +8,7 @@ trigger:
   paths:
     include:
       - docs
+      - azure-pipelines.yml
     exclude:
       - docs/README.md
   tags:
