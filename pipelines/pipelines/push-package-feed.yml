@@ -32,7 +32,7 @@ steps:
 - task: MSBuild@1
   displayName: build Class Library project and create Nuget package
   inputs:
-    solution: '$(Build.SourcesDirectory)/Source/projects/ClassLibrary/*.sln'
+    solution: '$(Build.SourcesDirectory)/projects/ClassLibrary/*.sln'
     msbuildArguments: '/p:Configuration=Debug /p:Platform="Any CPU"'
 
 
@@ -43,7 +43,7 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.SourcesDirectory)/Source/projects/ClassLibrary/bin/Debug/**/*.nupkg'
+    packagesToPush: '$(Build.SourcesDirectory)/projects/ClassLibrary/bin/Debug/**/*.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: '8184ae86-a38d-4131-b509-d9c780e1f2a2/01f1a152-37bb-420a-b16e-8f3b058aad70'
     allowPackageConflicts: true
