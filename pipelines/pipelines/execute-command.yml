@@ -19,7 +19,7 @@ steps:
 - task: AzureCLI@2
   displayName: display hostname
   inputs:
-    azureSubscription: 'AzureMSDN-ADO Intro'
+    azureSubscription: 'myAzureServiceConnectionName'
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: 'az vm run-command invoke --command-id RunShellScript --name $(vm_name) -g $(rg_name) --scripts "hostname"'
@@ -27,7 +27,7 @@ steps:
 - task: AzureCLI@2
   displayName: display /etc/passwd
   inputs:
-    azureSubscription: 'AzureMSDN-ADO Intro'
+    azureSubscription: 'myAzureServiceConnectionName'
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: 'az vm run-command invoke --command-id RunShellScript --name $(vm_name) -g $(rg_name) --scripts "cat /etc/passwd"'
