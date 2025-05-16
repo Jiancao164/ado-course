@@ -6,21 +6,14 @@ pr: none
 pool:
   vmImage: windows-latest
 
-resources:
-  repositories:
-    - repository: repo1
-      type: git
-      name: "projects"
-      ref: main
+
 
 steps:
 - checkout: self
   displayName: Download self repo
   path: "s/Source"
 
-- checkout: repo1
-  displayName: Download projects repo
-  path: "s/projects"
+
 
 - task: UseDotNet@2
   displayName: download .NET 6
@@ -33,24 +26,25 @@ steps:
   displayName: dotnet restore
   inputs:
     command: 'restore'
-    projects: '$(Build.SourcesDirectory)/projects/ClassLibrary/*.sln'
+    projects: '$(Build.SourcesDirectory)/Source/projects/ClassLibrary/*.sln'
     feedsToUse: 'select'
 
 - task: MSBuild@1
   displayName: build Class Library project and create Nuget package
   inputs:
-    solution: '$(Build.SourcesDirectory)/projects/ClassLibrary/*.sln'
+    solution: '$(Build.SourcesDirectory)/Source/projects/ClassLibrary/*.sln'
     msbuildArguments: '/p:Configuration=Debug /p:Platform="Any CPU"'
 
 
 - task: NuGetAuthenticate@1
   displayName: nuget authenticate
 
+
 - task: NuGetCommand@2
-  displayName: push nuget package to test-feed
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.SourcesDirectory)/projects/ClassLibrary/bin/Debug/**/*.nupkg'
+    packagesToPush: '$(Build.SourcesDirectory)/Source/projects/ClassLibrary/bin/Debug/**/*.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: '393655d7-4fb5-4a5d-b084-bac6f1f2ac4c'
+    publishVstsFeed: '8184ae86-a38d-4131-b509-d9c780e1f2a2/01f1a152-37bb-420a-b16e-8f3b058aad70'
     allowPackageConflicts: true
+
