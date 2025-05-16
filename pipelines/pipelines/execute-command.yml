@@ -11,7 +11,7 @@ variables:
 - name: vm_name
   value: "ubuntu"
 - name: rg_name
-  value: "vms"
+  value: "rg-playground"
 
 steps:
 
