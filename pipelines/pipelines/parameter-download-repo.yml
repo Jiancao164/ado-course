@@ -10,7 +10,7 @@ parameters:
   default: reponame
 - name: branchparam
   type: string
-  default: main
+  default: master
 
 variables:
   - name: repositoryvar
