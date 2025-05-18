@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 parameters:
-- name: repoparam
+- name: repoparam123
   type: string
   default: reponame
 - name: branchparam
@@ -14,7 +14,7 @@ parameters:
 
 variables:
   - name: repositoryvar
-    value: ${{parameters.repoparam}}
+    value: ${{parameters.repoparam123}}
   - name: branchvar
     value: ${{parameters.branchparam}}
 
@@ -23,9 +23,9 @@ resources:
   repositories:
     - repository: gitrepo
       type: github
-      name: geralexgr/$(repositoryvar)
+      name: cs5001-test
       ref: $(branchvar)
-      endpoint: geralexgr-ADO Intro
+      endpoint: Jiancao164
 
 steps:
 - checkout: gitrepo
