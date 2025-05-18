@@ -9,4 +9,4 @@ extends:
   template: build-and-test.yml@templates
   parameters:
     buildConfiguration: Debug
-    runTests: false
+    runTests: true
