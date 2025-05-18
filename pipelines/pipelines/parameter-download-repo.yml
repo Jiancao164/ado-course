@@ -23,7 +23,7 @@ resources:
   repositories:
     - repository: gitrepo
       type: github
-      name: cs5001-test
+      name: Jiancao164/cs5001-test
       ref: $(branchvar)
       endpoint: Jiancao164
 
